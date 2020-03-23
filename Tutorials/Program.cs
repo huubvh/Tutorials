@@ -10,8 +10,13 @@ namespace Tutorials
             //NumbersInC();
             //BranchesAndLoops();
             //ListCollections();
-            StringProgram();
+            //StringProgram();
+            DoVegetable();
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
         static void NumbersInC()
         {
             
@@ -40,6 +45,10 @@ namespace Tutorials
             Console.WriteLine("Circumference = " + circumference);
             Console.WriteLine("Area = " + area);
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
         static void BranchesAndLoops()
         {
             int counter = 0;
@@ -75,6 +84,9 @@ namespace Tutorials
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         static void ListCollections()
         {
             var names = new List<string> { "<name>", "huub", "karin" };
@@ -83,7 +95,6 @@ namespace Tutorials
                 Console.WriteLine(v.ToUpper());
             }
         }
-
 
 
         public class Person
@@ -114,7 +125,29 @@ namespace Tutorials
             Console.WriteLine("The name: " + p);
         }
 
-   
+        /// <summary>
+        /// 
+        /// </summary>
+
+        public enum Unit { item,kilogram, gram, dozen};
+        public static void DoVegetable()
+        {
+            var item = new Vegetable("Eggplant");
+            Console.WriteLine(item.Name);
+            Console.WriteLine(item); 
+            var price = 1.99M;
+            var date = DateTime.Now;
+            var unit = Unit.item;
+            Console.WriteLine($"On {date:d}, the price of {item} was {price} per {unit}");
+        }
         
     }
+    public class Vegetable
+    {
+        public Vegetable(string name) => Name = name;
+        public string Name { get; }
+        public override string ToString() => Name;
+    }
+
+
 }
