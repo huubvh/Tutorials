@@ -11,7 +11,8 @@ namespace Tutorials
             //BranchesAndLoops();
             //ListCollections();
             //StringProgram();
-            DoVegetable();
+            //DoVegetable();
+            Numbers();
         }
 
         /// <summary>
@@ -19,7 +20,7 @@ namespace Tutorials
         /// </summary>
         static void NumbersInC()
         {
-            
+
             double doublemin = double.MinValue;
             double doublemax = double.MaxValue;
             Console.WriteLine($"The range of the double type is {doublemin} to {doublemax}");
@@ -55,25 +56,25 @@ namespace Tutorials
             while (counter < 10)
             {
 
-                Console.WriteLine("while "+counter);
+                Console.WriteLine("while " + counter);
                 counter++;
             }
 
             int counterDo = 0;
             do
             {
-                Console.WriteLine("do " +counterDo);
+                Console.WriteLine("do " + counterDo);
                 counterDo++;
             } while (counterDo < 10);
-            
+
             for (int counterFor = 0; counterFor < 10; counterFor++)
             {
-                Console.WriteLine("for "+counterFor);
+                Console.WriteLine("for " + counterFor);
             }
 
             //print all numbers < 20 that are modulo 3
             int result;
-            for (int counterLoop = 1; counterLoop <=20; counterLoop++)
+            for (int counterLoop = 1; counterLoop <= 20; counterLoop++)
             {
                 result = counterLoop % 3;
                 if (result == 0)
@@ -129,25 +130,41 @@ namespace Tutorials
         /// 
         /// </summary>
 
-        public enum Unit { item,kilogram, gram, dozen};
+        public enum Unit { item, kilogram, gram, dozen };
         public static void DoVegetable()
         {
             var item = new Vegetable("Eggplant");
             Console.WriteLine(item.Name);
-            Console.WriteLine(item); 
+            Console.WriteLine(item);
             var price = 1.99M;
             var date = DateTime.Now;
             var unit = Unit.item;
             Console.WriteLine($"On {date:d}, the price of {item} was {price} per {unit}");
         }
-        
-    }
-    public class Vegetable
-    {
-        public Vegetable(string name) => Name = name;
-        public string Name { get; }
-        public override string ToString() => Name;
-    }
 
+        public static void Numbers()
+        {
+            int[] numbers = new int[100];
 
+            for (int i = 0; i < numbers.Length; i++)
+            {
+
+                if (i % 3 == 0)
+                {
+                    if (i % 5 == 0) Console.Write($"{i} Fizz Buzz");
+                    else Console.WriteLine($"{i} Fizz");
+                }
+                else if (i % 5 == 0) Console.WriteLine($"{i} Buzz");
+                else Console.WriteLine($"{i}");
+
+            }
+        }
+        public class Vegetable
+        {
+            public Vegetable(string name) => Name = name;
+            public string Name { get; }
+            public override string ToString() => Name;
+        }
+
+    }
 }
