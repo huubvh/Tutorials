@@ -12,9 +12,20 @@ namespace Tutorials
             //ListCollections();
             //StringProgram();
             //DoVegetable();
-            Numbers();
+            InterfaceTester();
+            
         }
 
+
+         static void InterfaceTester()
+            {
+                Transaction t1 = new Transaction("001", "8/10/2012", 78900.00);
+                Transaction t2 = new Transaction("002", "9/10/2012", 451900.00);
+
+                t1.showTransaction();
+                t2.showTransaction();
+                Console.ReadKey();
+            }
         /// <summary>
         /// 
         /// </summary>
@@ -130,21 +141,11 @@ namespace Tutorials
         /// 
         /// </summary>
 
-        public enum Unit { item, kilogram, gram, dozen };
-        public static void DoVegetable()
-        {
-            var item = new Vegetable("Eggplant");
-            Console.WriteLine(item.Name);
-            Console.WriteLine(item);
-            var price = 1.99M;
-            var date = DateTime.Now;
-            var unit = Unit.item;
-            Console.WriteLine($"On {date:d}, the price of {item} was {price} per {unit}");
-        }
 
         public static void Numbers()
         {
             int[] numbers = new int[100];
+
 
             for (int i = 0; i < numbers.Length; i++)
             {
@@ -164,6 +165,33 @@ namespace Tutorials
             public Vegetable(string name) => Name = name;
             public string Name { get; }
             public override string ToString() => Name;
+        }
+
+        public static void Numbers2 ()
+        {
+            short a;
+            int b;
+            double c;
+
+            /* actual initialization */
+            a = 10;
+            b = 20;
+            c = a + b;
+            Console.WriteLine("a = {0}, b = {1}, c = {2}", a, b, b);
+            Console.ReadLine();
+        }
+        public interface Dice
+        {
+            void diceRoll();
+
+        }
+        public class Die : Dice
+        {
+            public void diceRoll()
+            {
+
+            }
+
         }
 
     }

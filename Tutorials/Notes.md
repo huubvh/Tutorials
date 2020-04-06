@@ -28,6 +28,14 @@
 - foreach
 
 
+### Encapsulation and Abstraction
+This is the practice of making code accessible by other code at certain levels. Abstraction is making the code visible, Encapsulation is implementing the desired level of abstraction.
+- Public
+- Private
+- Protected
+- Internal
+- Protected internal
+
 
 ### Data types
 #### Value types
