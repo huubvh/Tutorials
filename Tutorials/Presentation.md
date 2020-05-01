@@ -11,6 +11,13 @@ In March 2020, I started a formal training based on 16 hrs/day spent on developm
 ## DiceGame / Casino
 This project started as a simple one file Console application, but within the training period has grown to an application that supports multiple UI's. The gamelogic is independant of UI and the games can be run through Console, WebApp and WebAPI.
 
+### Learning points
+- the difference between using a static class and a class of with you can create and use an instance. 
+- main characteristics
+  - Encapsulation
+  - Inheritance 
+  - Polymorphism
+
 ## Wiki helper
 The current BMS Wiki is published using the DocFX engine to generate HTML webpages based on Markdown files. The structure of Markdown files such as hosted on the TFS or Azure Devops environment does not work with DocFX out of the box. To publish the files, I have built an application that does three things
 1) Restructure the hyperlinks to adjust the relative paths for the website
